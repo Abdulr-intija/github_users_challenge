@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="androidx.core.content.ContextCompat" />
+
+        <variable
+            name="githubUser"
+            type="com.intija.githubx.models.GithubUser" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="match_parent"
+        tools:context=".views.githubuser.GithubUser">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="350dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/fadedBackgroundThumb" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"
+                    android:alpha="0.6"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@android:color/white"
+                    android:layout_alignParentBottom="true"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginRight="10dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="2dp"
+                    app:cardBackgroundColor="@color/colorPrimaryDark"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:transitionName="thumb"
+                        android:id="@+id/thumb"/>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <com.intija.githubx.views.customviews.BoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:textColor="@color/almostBlack"
+                    android:id="@+id/cardName"
+                    android:text="@{githubUser.name}"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="10dp"
+                    android:maxLines="2"
+                    android:ellipsize="end"/>
+
+                <com.intija.githubx.views.customviews.SemiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/darkHarsh"
+                    android:text="@{'@'+githubUser.login}"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"/>
+
+                <com.intija.githubx.views.customviews.NormalTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/almostBlack"
+                    android:text="@{githubUser.bio}"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="10dp"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/mediumLightHarsh"
+                    android:layout_marginTop="21dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:id="@+id/followersClicker"
+                        android:onClick="viewFollows"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="50">
+                        <com.intija.githubx.views.customviews.BoldTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Followers"
+                            android:layout_marginTop="15dp"/>
+                        <com.intija.githubx.views.customviews.NormalTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/almostBlack"
+                            android:textSize="25sp"
+                            android:text="@{String.valueOf(githubUser.followers)}"
+                            android:layout_marginTop="1dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:id="@+id/followingClicker"
+                        android:onClick="viewFollows"
+                        android:layout_weight="50">
+                        <com.intija.githubx.views.customviews.BoldTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Following"
+                            android:layout_marginTop="15dp"/>
+                        <com.intija.githubx.views.customviews.NormalTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/almostBlack"
+                            android:textSize="25sp"
+                            android:text="@{String.valueOf(githubUser.following)}"
+                            android:layout_marginTop="1dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/mediumLightHarsh"
+                    android:layout_marginTop="21dp"/>
+
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="20dp"
+                android:id="@+id/progressBar"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

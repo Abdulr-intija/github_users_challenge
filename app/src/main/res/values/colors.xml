@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff8800</color>
+    <color name="colorPrimaryFaded">#40ff8800</color>
+    <color name="colorPrimaryDark">#C86B01</color>
+    <color name="colorAccent">#ff8800</color>
+    <color name="lightHarsh">#dddddd</color>
+    <color name="mediumLightHarsh">#eeeeee</color>
+    <color name="almostBlack">#d000</color>
+    <color name="harsh">#888888</color>
+    <color name="darkHarsh">#a000</color>
+    <color name="veryLightHarsh">#05000000</color>
+</resources>

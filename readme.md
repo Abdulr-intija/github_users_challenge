@@ -18,9 +18,9 @@ This app depends on [Github's API](https://docs.github.com/en/free-pro-team@late
 
 ## Screenshots
 
-<img style="float: right;" src="screenshots/search.png">
-<img style="float: right;" src="screenshots/profile.png">
-<img style="float: right;" src="screenshots/followers.png">
+<img style="float: right;" src="screenshots/search.png" widht="25%">
+<img style="float: right;" src="screenshots/profile.png" width="25%">
+<img style="float: right;" src="screenshots/followers.png" width="25%">
 
 
     

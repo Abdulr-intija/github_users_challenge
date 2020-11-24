@@ -2,6 +2,7 @@ package com.intija.githubx.views.githubuser
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -51,6 +52,7 @@ class GithubUser : DaggerAppCompatActivity() {
 
                 ViewState.Status.ERROR -> {
                     showProgress(false)
+                    Log.d("rrrrrr", it?.message.toString())
                     Snackbar.make(progressBar, getString(R.string.error_occurred), Snackbar.LENGTH_LONG).show()
                 }
 

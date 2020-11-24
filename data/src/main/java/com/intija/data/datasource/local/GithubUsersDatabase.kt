@@ -28,7 +28,7 @@ abstract class GithubUsersDatabase : RoomDatabase() {
                         context.applicationContext,
                         GithubUsersDatabase::class.java,
                         Constants.dbName
-                    ).build()
+                    ).fallbackToDestructiveMigration().build()
                 }
 
                 return instance
